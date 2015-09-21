@@ -1,0 +1,12 @@
+.box {
+    margin: 5px;
+    border: solid #ccc; 
+    border-width: 1px;
+    height:115px;
+}
+
+/*li {
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+}*/
