@@ -64,6 +64,7 @@ function appear(){
     form.action      = config.search.url;
     text.name        = config.search.query;
     text.placeholder = config.search.name;
+    text.focus();
 };
 
 window.onload = appear;
