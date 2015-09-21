@@ -1,12 +1,29 @@
-.box {
-    margin: 5px;
-    border: solid #ccc; 
-    border-width: 1px;
-    height:115px;
+@font-face {
+    font-family:"Squada One";
+    font-style:normal;
+    font-weight:400;
+    /* src: url("../fonts/Fruity microfont.ttf"); */
+    src:local("Squada One"), local("SquadaOne-Regular"), url("../fonts/SquadaOne.woff") format("woff");
 }
 
-/*li {
-	border-style: solid;
-	border-color: black;
-	border-width: 1px;
-}*/
+#sites a {
+    color: white;
+    display: none;
+    font-family:'Squada One';
+    font-size:21pt;
+    text-align:center;
+    text-decoration:none;
+    text-shadow: rgba(48,48,48,.4)  -1px -1px 1px;
+}
+
+p.h1 {
+	padding-top: 100px;
+	padding-bottom: 50px;
+}
+div#sites {
+	padding-top: 150px;
+}
+
+#search input[type="text"] {
+    width:100%;
+}

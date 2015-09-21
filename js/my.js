@@ -1,29 +1,32 @@
 function appear(){
-    sitesdiv = document.getElementById("sites");
-    searchdiv = document.getElementById("search");
 
+    // get sites from json file
+    var sites;
+    $.ajax({
+        'async': false,
+        'global': false,
+        'url': "favorites.json",
+        'dataType': "json",
+        'success': function (data) {
+            sites = data;
+        }
+    });
+
+    // set up config object
     var config =
     {
-        "sites":
-        [
-            { "url": "http://xkcd.com/",                       "text": "xkcd",         "color":"#96A8C8" },
-            { "url": "http://youtube.com/",                     "text": "yt",         "color":"" },
-            { "url": "http://boards.4chan.org/g/",              "text": "/g/",        "color":"" },
-            { "url": "https://news.ycombinator.com/",           "text": "hn",         "color":"" },
-            { "url": "http://facebook.com/",                    "text": "fb",         "color":"" },
-            { "url": "http://github.com/",                      "text": "git",        "color":"" },
-            { "url": "https://news.ycombinator.com/",           "text": "hn",         "color":"" },
-            { "url": "http://facebook.com/",                    "text": "fb",         "color":"" },
-            { "url": "http://github.com/",                      "text": "git",        "color":"" }
-        ],
+        "sites":sites,
         "search":
         {
             "url"  : "https://duckduckgo.com/",
             "name" : "Search...",
             "query": "q"
         }
-    }, d = document;
+    };
 
+    var d = document;
+
+    // loop through all the sites and make links for all of them
     for (var i = 0, MAX = config.sites.length; i < MAX; ++i)
     {
         
@@ -36,6 +39,8 @@ function appear(){
             .css({
                 backgroundColor:config.sites[i].color,
                 height:"100px",
+                lineHeight: "100px",
+                display: "inline-block"
             })
             .append(
                 $('<a>')
@@ -46,22 +51,19 @@ function appear(){
                     })
                     .css({
                         display: "block",
-                        height: "100%",
+                        height: "100%"
                     })
                     .html(config.sites[i].text)
             )
             .appendTo(
                 document.getElementById("sites").firstElementChild
             )
-
-        // li = d.createElement("li");
-        // site = d.createElement("a");
-        // site.href = config.sites[i].url;
-        // site.textContent = config.sites[i].text;
-        // li.appendChild(site);
-
-        // sitesdiv.firstElementChild.appendChild(li);
     }
+
+    var form = d.querySelector("#search form"), text = form.querySelector("input");
+    form.action      = config.search.url;
+    text.name        = config.search.query;
+    text.placeholder = config.search.name;
 };
 
 window.onload = appear;

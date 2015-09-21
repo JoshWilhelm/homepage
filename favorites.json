@@ -1,0 +1,53 @@
+[
+    { 
+        "url": "http://xkcd.com/",
+        "text": "xkcd",             
+        "color":"#96A8C8" 
+    },
+    { 
+        "url": "http://9to5mac.com/",
+        "text": "9to5",
+        "color":"#0D4D7C" 
+    },
+    { 
+        "url": "https://news.ycombinator.com/",
+        "text": "hn",
+        "color":"#FF6600" 
+    },
+    { 
+        "url": "http://facebook.com/",
+        "text": "fb",
+        "color":"#3A5795" 
+    },
+    { 
+        "url": "http://twitter.com/",
+        "text": "twitter",
+        "color":"#59ADEB" 
+    },
+    { 
+        "url": "http://github.com/",
+        "text": "github",
+        "color":"#622E52" 
+    },
+    {},
+    { 
+        "url": "http://www.apple.com/",
+        "text": "apple",
+        "color":"#333333" 
+    },
+    { 
+        "url": "http://www.mint.com/",
+        "text": "mint",
+        "color":"#00C96D" 
+    },
+    { 
+        "url": "https://www.youtube.com/",
+        "text": "yt",
+        "color":"#CB1E20" 
+    },
+    { 
+        "url": "http://getpocket.com/a/queue/",
+        "text": "pocket",
+        "color":"#EE4056" 
+    }
+]
